@@ -1,0 +1,85 @@
+
+<%
+var selected1 = "";
+%>
+<div class="bjui-pageContent">
+  <form method="post" action="${ctxPath}/technicalpoint/save" class="pageForm" data-toggle="validate">
+
+    <input type="hidden" id="id" name="id" value="${technicalpoint.id!}">
+    <input type="hidden" id="action" name="action" value="${action!}">
+
+
+    	<div class="pageFormContent" data-layout-h="0">
+
+    		<table class="table table-condensed table-hover" width="100%">
+				<tbody>
+
+				<tr>
+					<td>
+						<label for="j_productid" class="control-label x85">产品名</label>
+		                	<select id="j_productid" name="productid" data-toggle="selectpicker" data-width="200"> 
+		                    <%
+                                selected1 = "";                                
+                                for(obj in productList!)
+                                {
+                                if(isEmpty(technicalpoint.productid) || obj.id != technicalpoint.productid)
+                                {
+                                selected1="";
+                                }else{
+                                selected1 = "selected='selected'";
+                                }
+                                println("<option value='" + obj.id + "'"+selected1+">"+obj.name+"</option>");
+                                }
+                              %>
+		                	</select>
+		            </td>
+            	</tr>
+				<tr>
+					<td>
+						<label for="j_osid" class="control-label x85">平台名</label>
+		                	<select id="j_osid" name="osid" data-toggle="selectpicker" data-width="200"> 
+		                    <%
+                                selected1 = "";                                
+                                for(obj in osList!)
+                                {
+                                if(isEmpty(technicalpoint.osid) || obj.id != technicalpoint.osid)
+                                {
+                                selected1="";
+                                }else{
+                                selected1 = "selected='selected'";
+                                }
+                                println("<option value='" + obj.id + "'"+selected1+">"+obj.name+"</option>");
+                                }
+                              %>
+		                	</select>
+		            </td>
+            	</tr>
+
+				<tr>
+					<td>
+						<label for="j_name" class="control-label x85">名称</label>
+						<input type="text" name="name" id="j_name" value="${technicalpoint.name!}" data-rule="" size="20">
+		            </td>
+		        </tr>
+
+				<tr>
+					<td>
+						<label for="j_des" class="control-label x85">描述</label>
+						<input type="text" name="des" id="j_des" value="${technicalpoint.des!}" data-rule="" size="20">
+		            </td>
+		        </tr>
+
+				</tbody>
+			</table>
+		</div>
+
+
+	</form>
+</div>
+
+<div class="bjui-pageFooter">
+	<ul>
+		<li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+		<li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+	</ul>
+</div>

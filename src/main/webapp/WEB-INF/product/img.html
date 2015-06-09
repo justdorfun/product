@@ -1,0 +1,75 @@
+
+<%
+var selected1 = "";
+%>
+<div class="bjui-pageContent">
+  <form method="post" action="${ctxPath}/img/save" class="pageForm" data-toggle="validate">
+
+    <input type="hidden" id="id" name="id" value="${img.id!}">
+    <input type="hidden" id="action" name="action" value="${action!}">
+
+
+    	<div class="pageFormContent" data-layout-h="0">
+
+    		<table class="table table-condensed table-hover" width="100%">
+				<tbody>
+
+
+				<tr>
+					<td>
+						<label for="j_productid" class="control-label x85">产品名</label>
+						<input type="text" name="productid" id="j_productid" value="${img.productid!}" data-rule="" size="20">
+		            </td>
+		        </tr>
+
+				<tr>
+					<td>
+						<label for="j_name" class="control-label x85">名称</label>
+						<input type="text" name="name" id="j_name" value="${img.name!}" data-rule="" size="20">
+		            </td>
+		        </tr>
+
+				<tr>
+					<td>
+						<label for="j_imgurl" class="control-label x85">图片地址</label>
+						<input type="text" name="imgurl" id="j_imgurl" value="${img.imgurl!}" data-rule="" size="20">
+		            </td>
+		        </tr>
+
+				<tr>
+					<td>
+						<label for="j_adddate" class="control-label x85">添加日期</label>
+
+						<input type="text" name="adddate" id="j_adddate" value="${img.adddate!,'yyyy-MM-dd'}" data-toggle="datepicker" data-rule="date" size="20">
+		            </td>
+		        </tr>
+
+
+				<tr>
+					<td>
+						<label for="j_des" class="control-label x85">描述</label>
+						<input type="text" name="des" id="j_des" value="${img.des!}" data-rule="" size="20">
+		            </td>
+		        </tr>
+
+				<tr>
+					<td>
+						<label for="j_memo" class="control-label x85">备注</label>
+						<input type="text" name="memo" id="j_memo" value="${img.memo!}" data-rule="" size="20">
+		            </td>
+		        </tr>
+
+				</tbody>
+			</table>
+		</div>
+
+
+	</form>
+</div>
+
+<div class="bjui-pageFooter">
+	<ul>
+		<li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+		<li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+	</ul>
+</div>

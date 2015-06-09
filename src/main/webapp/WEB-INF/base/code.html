@@ -1,0 +1,79 @@
+
+<%
+var selected1 = "";
+%>
+<div class="bjui-pageContent">
+  <form method="post" action="${ctxPath}/code/save" class="pageForm" data-toggle="validate">
+
+    <input type="hidden" id="id" name="id" value="${code.id!}">
+    <input type="hidden" id="action" name="action" value="${action!}">
+
+
+    	<div class="pageFormContent" data-layout-h="0">
+
+    		<table class="table table-condensed table-hover" width="100%">
+				<tbody>
+
+
+				<tr>
+					<td>
+						<label for="j_name" class="control-label x85">名称</label>
+						<input type="text" name="name" id="j_name" value="${code.name!}" data-rule="" size="20">
+		            </td>
+		        </tr>
+				<tr>
+					<td>
+						<label for="j_osid" class="control-label x85">平台</label>
+		                	<select id="j_osid" name="osid" data-toggle="selectpicker" data-width="200"> 
+		                    <%
+                                selected1 = "";                                
+                                for(obj in osList!)
+                                {
+                                if(isEmpty(code.osid) || obj.id != code.osid)
+                                {
+                                selected1="";
+                                }else{
+                                selected1 = "selected='selected'";
+                                }
+                                println("<option value='" + obj.id + "'"+selected1+">"+obj.name+"</option>");
+                                }
+                              %>
+		                	</select>
+		            </td>
+            	</tr>
+
+				<tr>
+					<td>
+						<label for="j_des" class="control-label x85">描述</label>
+						<input type="text" name="des" id="j_des" value="${code.des!}" data-rule="" size="20">
+		            </td>
+		        </tr>
+
+				<tr>
+					<td>
+						<label for="j_info" class="control-label x85">详细</label>
+						<input type="text" name="info" id="j_info" value="${code.info!}" data-rule="" size="20">
+		            </td>
+		        </tr>
+
+				<tr>
+					<td>
+						<label for="j_memo" class="control-label x85">备注</label>
+						<input type="text" name="memo" id="j_memo" value="${code.memo!}" data-rule="" size="20">
+		            </td>
+		        </tr>
+
+				</tbody>
+			</table>
+		</div>
+
+
+	</form>
+</div>
+
+<div class="bjui-pageFooter">
+	<ul>
+		<li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+		<li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+	</ul>
+</div>
