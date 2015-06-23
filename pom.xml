@@ -92,6 +92,6 @@
 
 
     <build>
-        <finalName>auto</finalName>
+        <finalName>project</finalName>
     </build>
 </project>
