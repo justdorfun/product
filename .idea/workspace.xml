@@ -96,10 +96,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.iml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web.iml">
+      <file leaf-file-name="project.iml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/project.iml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20044543" vertical-offset="0" max-vertical-offset="1152">
+            <state vertical-scroll-proportion="0.13808464" vertical-offset="56" max-vertical-offset="1152">
               <caret line="10" column="13" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="13" />
               <folding />
             </state>
@@ -132,7 +132,7 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="324">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="378">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -150,6 +150,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/project.iml" />
       </list>
     </option>
   </component>
@@ -257,7 +258,7 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -420,9 +421,9 @@
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
-        <artifact name="web:war exploded">
+        <artifact name="project:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/web" />
+            <option name="CONTEXT_PATH" value="/project" />
           </settings>
         </artifact>
       </deployment>
@@ -526,7 +527,7 @@
       </ConfigurationWrapper>
       <method>
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="web:war exploded" />
+          <artifact name="project:war exploded" />
         </option>
       </method>
     </configuration>
@@ -611,12 +612,12 @@
       <workItem from="1408804768007" duration="599000" />
       <workItem from="1408882344968" duration="608000" />
       <workItem from="1408884151759" duration="7000" />
-      <workItem from="1435072903453" duration="118000" />
+      <workItem from="1435072903453" duration="220000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139659000" />
+    <option name="totallyTimeSpent" value="139761000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -640,7 +641,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="62" y="23" width="1858" height="1057" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -663,7 +664,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18006608" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2345815" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2345815" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31517094" sideWeight="0.4997242" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1022,9 +1023,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web.iml">
+    <entry file="file://$PROJECT_DIR$/project.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20044543" vertical-offset="0" max-vertical-offset="1152">
+        <state vertical-scroll-proportion="0.13808464" vertical-offset="56" max-vertical-offset="1152">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="13" />
           <folding />
         </state>
@@ -1036,7 +1037,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>web</last-edited>
+          <last-edited>project:war</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1049,7 +1050,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Web (web)|Web</last-edited>
+          <last-edited>Project (project)|Web</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1084,12 +1085,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>web</last-edited>
+          <last-edited>Project|project</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
