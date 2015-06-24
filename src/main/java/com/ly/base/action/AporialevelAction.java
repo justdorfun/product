@@ -26,28 +26,27 @@ import com.ly.base.service.AporialevelService;
 @IocBean
 @At("/aporialevel")
 @Fail("json")
-@Filters(@By(type=CheckSession.class, args={"username", "/WEB-INF/login.html"}))
+@Filters(@By(type = CheckSession.class, args = {"username", "/WEB-INF/login.html"}))
 public class AporialevelAction {
 
-	private static final Log log = Logs.getLog(AporialevelAction.class);
-	
-	@Inject
-	private AporialevelService aporialevelService;
+    private static final Log log = Logs.getLog(AporialevelAction.class);
+
+    @Inject
+    private AporialevelService aporialevelService;
 
     @At("/")
     @Ok("beetl:/WEB-INF/base/aporialevel_list.html")
-    public void index(@Param("..")Page p,
-                      @Param("..")Aporialevel aporialevel,
-                      HttpServletRequest request){
+    public void index(@Param("..") Page p,
+                      @Param("..") Aporialevel aporialevel,
+                      HttpServletRequest request) {
 
         Cnd c = new ParseObj(aporialevel).getCnd();
-        if (c == null || c.equals(""))
-        {
+        if (c == null || c.equals("")) {
             p.setRecordCount(aporialevelService.listCount(c));
-            request.setAttribute("list_obj", aporialevelService.queryCache(c,p));
-        }else{
+            request.setAttribute("list_obj", aporialevelService.queryCache(c, p));
+        } else {
             p.setRecordCount(aporialevelService.count(c));
-            request.setAttribute("list_obj", aporialevelService.query(c,p));
+            request.setAttribute("list_obj", aporialevelService.query(c, p));
         }
 
         request.setAttribute("page", p);
@@ -56,16 +55,15 @@ public class AporialevelAction {
 
     @At
     @Ok("beetl:/WEB-INF/base/aporialevel.html")
-    public void edit(@Param("action")int action,
-                     @Param("id")Long id,
-                      HttpServletRequest request){
-        if(id == null || id == 0){
+    public void edit(@Param("action") int action,
+                     @Param("id") Long id,
+                     HttpServletRequest request) {
+        if (id == null || id == 0) {
             request.setAttribute("aporialevel", null);
-        }else{
+        } else {
 
             Aporialevel aporialevel = aporialevelService.fetch(id);
-            if (action == 3)
-            {
+            if (action == 3) {
                 //aporialevel.setName(null);
             }
             request.setAttribute("aporialevel", aporialevel);
@@ -75,16 +73,16 @@ public class AporialevelAction {
 
     @At
     @Ok("json")
-    public Map<String,String> save(@Param("action")int action,
-                                @Param("..")Aporialevel aporialevel){
+    public Map<String, String> save(@Param("action") int action,
+                                    @Param("..") Aporialevel aporialevel) {
         Object rtnObject;
         if (aporialevel.getId() == null || aporialevel.getId() == 0) {
             rtnObject = aporialevelService.dao().insert(aporialevel);
-        }else{
+        } else {
             if (action == 3) {
                 aporialevel.setId(null);
                 rtnObject = aporialevelService.dao().insert(aporialevel);
-            }else{
+            } else {
                 rtnObject = aporialevelService.dao().updateIgnoreNull(aporialevel);
             }
         }
@@ -95,11 +93,10 @@ public class AporialevelAction {
 
     @At
     @Ok("json")
-    public Map<String,String> del(@Param("id")Long id)
-    {
-        int num =  aporialevelService.delete(id);
+    public Map<String, String> del(@Param("id") Long id) {
+        int num = aporialevelService.delete(id);
         CacheManager.getInstance().getCache(AporialevelService.CACHE_NAME).removeAll();
-        return Bjui.rtnMap((num > 0) ? true : false , "tab_aporialevel",false);
+        return Bjui.rtnMap((num > 0) ? true : false, "tab_aporialevel", false);
     }
 
 }

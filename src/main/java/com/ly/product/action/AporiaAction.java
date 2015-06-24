@@ -1,8 +1,12 @@
 package com.ly.product.action;
 
+import com.ly.CBData;
+import com.ly.base.service.AporialevelService;
+import com.ly.base.service.OsService;
 import com.ly.comm.Bjui;
 import com.ly.comm.Page;
 import com.ly.comm.ParseObj;
+import com.ly.product.service.ProductService;
 import org.nutz.dao.Cnd;
 import org.nutz.dao.Dao;
 import org.nutz.ioc.loader.annotation.Inject;
@@ -34,6 +38,16 @@ public class AporiaAction {
 	@Inject
 	private AporiaService aporiaService;
 
+    @Inject
+    private OsService osService;
+
+    @Inject
+    private ProductService productService;
+
+    @Inject
+    private AporialevelService aporialevelService;
+
+
     @At("/")
     @Ok("beetl:/WEB-INF/product/aporia_list.html")
     public void index(@Param("..")Page p,
@@ -49,6 +63,10 @@ public class AporiaAction {
             p.setRecordCount(aporiaService.count(c));
             request.setAttribute("list_obj", aporiaService.query(c,p));
         }
+        request.setAttribute("osList", osService.queryCache(null, new Page()));
+        request.setAttribute("productList", productService.queryCache(null, new Page()));
+        request.setAttribute("aporialevelList", aporialevelService.queryCache(null, new Page()));
+
 
         request.setAttribute("page", p);
         request.setAttribute("aporia", aporia);
@@ -70,6 +88,10 @@ public class AporiaAction {
             }
             request.setAttribute("aporia", aporia);
         }
+        request.setAttribute("osList", osService.queryCache(null, new Page()));
+        request.setAttribute("productList", productService.queryCache(null, new Page()));
+        request.setAttribute("aporialevelList", aporialevelService.queryCache(null, new Page()));
+
         request.setAttribute("action", action);
     }
 

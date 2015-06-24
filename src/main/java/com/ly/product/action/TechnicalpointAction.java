@@ -1,8 +1,11 @@
 package com.ly.product.action;
 
+import com.ly.CBData;
+import com.ly.base.service.OsService;
 import com.ly.comm.Bjui;
 import com.ly.comm.Page;
 import com.ly.comm.ParseObj;
+import com.ly.product.service.ProductService;
 import org.nutz.dao.Cnd;
 import org.nutz.dao.Dao;
 import org.nutz.ioc.loader.annotation.Inject;
@@ -34,6 +37,12 @@ public class TechnicalpointAction {
 	@Inject
 	private TechnicalpointService technicalpointService;
 
+    @Inject
+    private OsService osService;
+
+    @Inject
+    private ProductService productService;
+
     @At("/")
     @Ok("beetl:/WEB-INF/product/technicalpoint_list.html")
     public void index(@Param("..")Page p,
@@ -50,6 +59,8 @@ public class TechnicalpointAction {
             request.setAttribute("list_obj", technicalpointService.query(c,p));
         }
 
+        request.setAttribute("osList", osService.queryCache(null,new Page()));
+        request.setAttribute("productList", productService.queryCache(null,new Page()));
         request.setAttribute("page", p);
         request.setAttribute("technicalpoint", technicalpoint);
     }
@@ -70,6 +81,8 @@ public class TechnicalpointAction {
             }
             request.setAttribute("technicalpoint", technicalpoint);
         }
+        request.setAttribute("osList", osService.queryCache(null, new Page()));
+        request.setAttribute("productList", productService.queryCache(null, new Page()));
         request.setAttribute("action", action);
     }
 

@@ -1,5 +1,9 @@
 package com.ly.product.action;
 
+import com.ly.CBData;
+import com.ly.base.service.OsService;
+import com.ly.base.service.ProductgroupService;
+import com.ly.base.service.StudioService;
 import com.ly.comm.Bjui;
 import com.ly.comm.Page;
 import com.ly.comm.ParseObj;
@@ -34,6 +38,15 @@ public class ProductAction {
 	@Inject
 	private ProductService productService;
 
+    @Inject
+    private OsService osService;
+
+    @Inject
+    private StudioService studioService;
+
+    @Inject
+    private ProductgroupService productgroupService;
+
     @At("/")
     @Ok("beetl:/WEB-INF/product/product_list.html")
     public void index(@Param("..")Page p,
@@ -49,6 +62,10 @@ public class ProductAction {
             p.setRecordCount(productService.count(c));
             request.setAttribute("list_obj", productService.query(c,p));
         }
+
+        request.setAttribute("osList", osService.queryCache(null,new Page()));
+        request.setAttribute("studioList", studioService.queryCache(null,new Page()));
+        request.setAttribute("productgroupList", productgroupService.queryCache(null,new Page()));
 
         request.setAttribute("page", p);
         request.setAttribute("product", product);
@@ -70,6 +87,10 @@ public class ProductAction {
             }
             request.setAttribute("product", product);
         }
+        request.setAttribute("osList", osService.queryCache(null, new Page()));
+        request.setAttribute("studioList", studioService.queryCache(null, new Page()));
+        request.setAttribute("productgroupList", productgroupService.queryCache(null, new Page()));
+
         request.setAttribute("action", action);
     }
 

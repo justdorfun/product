@@ -1,5 +1,6 @@
 package com.ly.base.action;
 
+import com.ly.CBData;
 import com.ly.comm.Bjui;
 import com.ly.comm.Page;
 import com.ly.comm.ParseObj;
@@ -50,6 +51,8 @@ public class CodeAction {
             request.setAttribute("list_obj", codeService.query(c,p));
         }
 
+        request.setAttribute("osList", CBData.getInstance().getOsList());
+
         request.setAttribute("page", p);
         request.setAttribute("code", code);
     }
@@ -70,6 +73,7 @@ public class CodeAction {
             }
             request.setAttribute("code", code);
         }
+        request.setAttribute("osList", CBData.getInstance().getOsList());
         request.setAttribute("action", action);
     }
 
