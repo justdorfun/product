@@ -3,7 +3,7 @@
 var selected1 = "";
 %>
 <div class="bjui-pageContent">
-  <form method="post" action="${ctxPath}/img/save" class="pageForm" data-toggle="validate">
+  <form method="post" enctype="multipart/form-data" action="${ctxPath}/img/save" class="pageForm" data-toggle="validate">
 
     <input type="hidden" id="id" name="id" value="${img.id!}">
     <input type="hidden" id="action" name="action" value="${action!}">
@@ -18,9 +18,23 @@ var selected1 = "";
 				<tr>
 					<td>
 						<label for="j_productid" class="control-label x85">产品名</label>
-						<input type="text" name="productid" id="j_productid" value="${img.productid!}" data-rule="" size="20">
-		            </td>
-		        </tr>
+						<select id="j_productid" name="productid" data-toggle="selectpicker" data-width="200">
+							<%
+							selected1 = "";
+							for(obj in productList!)
+							{
+							if(isEmpty(img.productid) || obj.id != img.productid)
+							{
+							selected1="";
+							}else{
+							selected1 = "selected='selected'";
+							}
+							println("<option value='" + obj.id + "'"+selected1+">"+obj.name+"</option>");
+							}
+							%>
+						</select>
+					</td>
+				</tr>
 
 				<tr>
 					<td>
@@ -38,12 +52,10 @@ var selected1 = "";
 
 				<tr>
 					<td>
-						<label for="j_adddate" class="control-label x85">添加日期</label>
-
-						<input type="text" name="adddate" id="j_adddate" value="${img.adddate!,'yyyy-MM-dd'}" data-toggle="datepicker" data-rule="date" size="20">
-		            </td>
-		        </tr>
-
+						<label for="file1" class="control-label x85">上传图片</label>
+						<input id="file1" type="file" name="file1" >
+					</td>
+				</tr>
 
 				<tr>
 					<td>

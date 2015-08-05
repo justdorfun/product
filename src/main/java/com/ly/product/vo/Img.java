@@ -5,8 +5,11 @@ import org.nutz.dao.entity.annotation.Table;
 import org.nutz.dao.entity.annotation.Column;
 import org.nutz.dao.entity.annotation.Id;
 import org.nutz.dao.entity.annotation.View;
+import org.nutz.dao.entity.annotation.Readonly;
+
 
 @Table("img")
+@View("img_view")
 public class Img{
 
 	@Id
@@ -14,22 +17,35 @@ public class Img{
 	private Long id;
 
 	@Column
+	@Readonly
+	private String productname;
+		
+
+	@Column
 	private Long productid;
+
 
 	@Column
 	private String name;
 
+
 	@Column
 	private String imgurl;
+
 
 	@Column
 	private Date adddate;
 
+
 	@Column
 	private String des;
 
+
 	@Column
 	private String memo;
+
+
+
 
 
 	public Long getId() {
@@ -39,6 +55,14 @@ public class Img{
 	public void setId(Long id) {
 		this.id = id;
 	}
+	public String getProductname() {
+		return productname;
+	}
+
+	public void setProductname(String productname) {
+		this.productname = productname;
+	}
+
 
 	public Long getProductid() {
 		return productid;

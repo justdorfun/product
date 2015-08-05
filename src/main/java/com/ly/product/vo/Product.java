@@ -69,6 +69,42 @@ public class Product{
 	private String memo;
 
 
+	@Column
+	private String umengkey;
+
+
+	@Column
+	private String ibad1;
+
+
+	@Column
+	private String ibad2;
+
+
+	@Column
+	private String ifad1;
+
+
+	@Column
+	private String ifad2;
+
+
+	@Column
+	private String abad1;
+
+
+	@Column
+	private String abad2;
+
+
+	@Column
+	private String afad1;
+
+
+	@Column
+	private String afad2;
+
+
 
 
 
@@ -182,5 +218,77 @@ public class Product{
 
 	public void setMemo(String memo) {
 		this.memo = memo;
+	}
+
+	public String getUmengkey() {
+		return umengkey;
+	}
+
+	public void setUmengkey(String umengkey) {
+		this.umengkey = umengkey;
+	}
+
+	public String getIbad1() {
+		return ibad1;
+	}
+
+	public void setIbad1(String ibad1) {
+		this.ibad1 = ibad1;
+	}
+
+	public String getIbad2() {
+		return ibad2;
+	}
+
+	public void setIbad2(String ibad2) {
+		this.ibad2 = ibad2;
+	}
+
+	public String getIfad1() {
+		return ifad1;
+	}
+
+	public void setIfad1(String ifad1) {
+		this.ifad1 = ifad1;
+	}
+
+	public String getIfad2() {
+		return ifad2;
+	}
+
+	public void setIfad2(String ifad2) {
+		this.ifad2 = ifad2;
+	}
+
+	public String getAbad1() {
+		return abad1;
+	}
+
+	public void setAbad1(String abad1) {
+		this.abad1 = abad1;
+	}
+
+	public String getAbad2() {
+		return abad2;
+	}
+
+	public void setAbad2(String abad2) {
+		this.abad2 = abad2;
+	}
+
+	public String getAfad1() {
+		return afad1;
+	}
+
+	public void setAfad1(String afad1) {
+		this.afad1 = afad1;
+	}
+
+	public String getAfad2() {
+		return afad2;
+	}
+
+	public void setAfad2(String afad2) {
+		this.afad2 = afad2;
 	}
 }
