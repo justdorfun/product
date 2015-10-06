@@ -3,8 +3,106 @@
 var selected1 = "";
 %>
 
-<!--<div class="bjui-pageContent bjui-tablefixed">-->
-	<table  data-toggle="tablefixed" data-width="100%"  data-layout-h="200" data-nowrap="true">
+<div class="bjui-pageHeader">
+	<form id="pagerForm" data-toggle="ajaxsearch" action="${ctxPath}/aporia" method="post">
+
+
+		<input type="hidden" name="pageSize" value="${page.pageSize}" />
+		<input type="hidden" name="pageCurrent" value="${page.pageCurrent}" />
+
+		<div class="bjui-searchBar">
+			<label for="j_productid">产品名：</label>
+
+
+			<select id="j_productid" name="productid" data-toggle="selectpicker" data-width="100">
+				<option value="null">---查询条件---</option>
+				<%
+				selected1 = "";
+				for(obj in productList!)
+				{
+				if(isEmpty(aporia.productid) || obj.id != aporia.productid)
+				{
+				selected1="";
+				}else{
+				selected1 = "selected='selected'";
+				}
+				println("<option value='" + obj.id + "'"+selected1+">"+obj.name+"</option>");
+				}
+				%>
+			</select>
+
+			<label for="j_osid">平台名：</label>
+
+
+			<select id="j_osid" name="osid" data-toggle="selectpicker" data-width="100">
+				<option value="null">---查询条件---</option>
+				<%
+				selected1 = "";
+				for(obj in osList!)
+				{
+				if(isEmpty(aporia.osid) || obj.id != aporia.osid)
+				{
+				selected1="";
+				}else{
+				selected1 = "selected='selected'";
+				}
+				println("<option value='" + obj.id + "'"+selected1+">"+obj.name+"</option>");
+				}
+				%>
+			</select>
+
+
+			<label for="j_name">名称：</label>
+			<input type="text"  id="j_name" name="name" value="${aporia.name!}" class="form-control" size="10"/>
+			<label for="j_aporialevelid">难点级别：</label>
+
+
+			<select id="j_aporialevelid" name="aporialevelid" data-toggle="selectpicker" data-width="100">
+				<option value="null">---查询条件---</option>
+				<%
+				selected1 = "";
+				for(obj in aporialevelList!)
+				{
+				if(isEmpty(aporia.aporialevelid) || obj.id != aporia.aporialevelid)
+				{
+				selected1="";
+				}else{
+				selected1 = "selected='selected'";
+				}
+				println("<option value='" + obj.id + "'"+selected1+">"+obj.name+"</option>");
+				}
+				%>
+			</select>
+
+
+			<button type="submit" class="btn-default" data-icon="search">查询</button>
+			<a class="btn btn-orange" id="resetAporia" href="javascript:;" data-toggle="reloadsearch" data-clear-query="true" data-icon="undo">清空查询</a>
+
+			<div class="pull-right">
+
+				<a  href="${ctxPath}/aporia/edit" class="btn btn-default" data-id="dialog_aporia_edit" data-toggle="dialog"
+					data-width="500" data-height="320"  data-mask="true" data-on-close="aporia_refresh">添加</a>
+
+				<a  href="${ctxPath}/aporia/edit?id={#bjui-selected}" class="btn btn-default" data-id="tab_aporia_edit" data-toggle="dialog"
+					data-width="500" data-height="320"  data-mask="true" data-on-close="aporia_refresh">编辑</a>
+
+				<a  href="${ctxPath}/aporia/edit?action=3&id={#bjui-selected}" class="btn btn-default" data-id="tab_aporia_edit" data-toggle="dialog"
+					data-width="500" data-height="320" data-mask="true" data-on-close="aporia_refresh">复制添加</a>
+
+				<a href="${ctxPath}/aporia/del?id={#bjui-selected}" class="btn btn-red" data-toggle="doajax"
+				   data-confirm-msg="确定要删除该行信息吗？" data-callback="aporia_refresh">删</a>
+
+				&nbsp;&nbsp;
+			</div>
+
+		</div>
+
+	</form>
+</div>
+
+
+<div class="bjui-pageContent">
+	<table  data-toggle="tablefixed" data-width="100%"  data-layout-h="200" data-nowrap="true" data-layout-h="0">
 		<thead>
 		<tr>
 
@@ -83,27 +181,29 @@ var selected1 = "";
 
 		</tbody>
 	</table>
-<!--</div>-->
+</div>
+
+<div class="bjui-pageFooter">
+	<div class="pages">
+		<span>每页&nbsp;</span>
+		<div class="selectPagesize">
+			<select data-toggle="selectpicker" data-toggle-change="changepagesize">
+				<option value="20">20</option>
+				<option value="30">30</option>
+				<option value="50">50</option>
+				<option value="100">100</option>
+			</select>
+		</div>
+		<span>&nbsp;条，共 ${page.recordCount} 条</span>
+	</div>
+	<div class="pagination-box" data-toggle="pagination" data-total="${page.recordCount}" data-page-size="20" data-page-current="${page.pageNumber}">
+	</div>
+</div>
 
 
 
 <script type="text/javascript">
-	function doc_dialog_onLoad($dialog) {
-		$dialog.alertmsg('info', 'onLoad回调：不填写工号是不能关闭本弹窗的。')
-	}
-	function doc_dialog_beforeClose($dialog) {
-		$dialog.alertmsg('error', 'beforeClose回调：关闭弹窗前请先填入你的工号。')
-		return false
-	}
-	function doc_dialog_onClose() {
-		$("#search11").click();
-		var a = $.CurrentDialog.find('#search11');
-		alert(a);
-		$.CurrentDialog.find('#message11').navtab('refresh');
-		alert($.CurrentDialog.find('#layout-02').text());
-
-		$('.refreshTab').navtab('refresh', 'tab_aporia11');
-
-//		$(this).refresh();
+	function aporia_refresh() {
+		$("#resetAporia").click();
 	}
 </script>

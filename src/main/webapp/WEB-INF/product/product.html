@@ -6,7 +6,7 @@ var selected1 = "";
 	<div style="height:99.9%; overflow:hidden;">
 		<div style="height:60%; overflow:hidden;">
 			<fieldset style="height:100%;">
-				<legend>第一/三业务区</legend>
+				<legend>基础信息</legend>
 				<div id="layout-01" style="height:94%; overflow:hidden;">
 
 					<form method="post" action="${ctxPath}/product/save" class="pageForm" data-toggle="validate">
@@ -195,33 +195,40 @@ var selected1 = "";
 				</div>
 			</fieldset>
 		</div>
+		<%
+		if(!isEmpty(product.id))
+		{
+		%>
 		<div style="height:40%; overflow:hidden;">
 
-
-
 			<fieldset style="height:100%;">
-				<legend>第二/四业务区</legend>
+				<legend>其他信息</legend>
 
 				<ul class="nav nav-tabs" role="tablist">
+
 					<li class="active">
-						<a href="#technicalpoint" role="tab" data-toggle="tab">技术点</a>
+						<a href="#aporia" role="tab" data-toggle="tab">技术难点</a>
 					</li>
 
-					<li><a href="${ctxPath}/aporia" role="tab" data-toggle="ajaxtab" data-target="#aporia11" data-reload="false">ajax加载</a></li>
+					<li >
+						<a href="#technicalpoint" onclick="showTP()"  role="tab" data-toggle="tab">技术点</a>
+					</li>
 
 				</ul>
 
-				<div class="tab-content">
-					<div class="tab-pane fade active in" id="technicalpoint" data-url="${ctxPath}/technicalpoint" data-toggle="autoajaxload">
+				<div class="tab-content" style="padding: 0px;">
+					<div class="tab-pane active in"  id="aporia" data-url="${ctxPath}/aporia?productid=${product.id!}" data-toggle="autoajaxload" >
 					</div>
 
-					<div class="tab-pane fade"  id="aporia11">
+					<div class="tab-pane" id="technicalpoint" data-url="${ctxPath}/technicalpoint?productid=${product.id!}" data-toggle="autoajaxload">
 					</div>
-
 				</div>
 
 			</fieldset>
 		</div>
+		<%
+		}
+		%>
 	</div>
 
 </div>
@@ -232,3 +239,10 @@ var selected1 = "";
 		<li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
 	</ul>
 </div>
+
+<script type="text/javascript">
+	function showTP()
+	{
+		$("#resetTP").click();
+	}
+</script>
