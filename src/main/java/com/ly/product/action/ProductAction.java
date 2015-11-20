@@ -30,7 +30,7 @@ import com.ly.product.service.ProductService;
 @IocBean
 @At("/product")
 @Fail("json")
-@Filters(@By(type=CheckSession.class, args={"username", "/WEB-INF/login.html"}))
+@Filters(@By(type=CheckSession.class, args={"username", "/"}))
 public class ProductAction {
 
 	private static final Log log = Logs.getLog(ProductAction.class);
@@ -54,12 +54,11 @@ public class ProductAction {
                       HttpServletRequest request){
 
         Cnd c = new ParseObj(product).getCnd();
+        p.setRecordCount(productService.listCount(c));
         if (c == null || c.equals(""))
         {
-            p.setRecordCount(productService.listCount(c));
             request.setAttribute("list_obj", productService.queryCache(c,p));
         }else{
-            p.setRecordCount(productService.count(c));
             request.setAttribute("list_obj", productService.query(c,p));
         }
 

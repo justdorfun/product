@@ -29,7 +29,7 @@ import com.ly.product.service.TechnicalpointService;
 @IocBean
 @At("/technicalpoint")
 @Fail("json")
-@Filters(@By(type=CheckSession.class, args={"username", "/WEB-INF/login.html"}))
+@Filters(@By(type=CheckSession.class, args={"username", "/"}))
 public class TechnicalpointAction {
 
 	private static final Log log = Logs.getLog(TechnicalpointAction.class);
@@ -63,6 +63,16 @@ public class TechnicalpointAction {
         request.setAttribute("productList", productService.queryCache(null,new Page()));
         request.setAttribute("page", p);
         request.setAttribute("technicalpoint", technicalpoint);
+    }
+
+    @At
+    @Ok("Json")
+    public List<Technicalpoint> list(@Param("..")Page p,
+                      @Param("..")Technicalpoint technicalpoint,
+                      HttpServletRequest request){
+
+        Cnd c = new ParseObj(technicalpoint).getCnd();
+        return technicalpointService.query(c,p);
     }
 
     @At

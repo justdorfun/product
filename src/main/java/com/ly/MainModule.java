@@ -11,7 +11,7 @@ import org.nutz.mvc.ioc.provider.ComboIocProvider;
 @SetupBy(MvcSetup.class)
 @Views({BeetlViewMaker.class})
 @Ok("json")
-@Fail("json")
+@Fail("jsp:500")
 @Encoding(input = "UTF-8", output = "UTF-8")
 public class MainModule {
 
