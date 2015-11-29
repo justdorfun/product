@@ -9,8 +9,7 @@ def common_clear(submodule_directory, version):
 	'git checkout ' + version,
 	'cd ..',
 	'git add '+submodule_directory,
-	'git commit -m "moved ' + submodule_directory + ' to ' + version + '"',
-	'git push']
+	'git commit -m "moved ' + submodule_directory + ' to ' + version + '"']
 	dr = submodule_directory
 	os.chdir(dr)
 	os.system("git checkout " + version)
@@ -24,11 +23,11 @@ def common_clear(submodule_directory, version):
 if __name__ == '__main__':
 	""" change commands and add shell"""
 	commands = [
-	["git submodule add --force https://git.oschina.net/dongfangx/SYS-JAVA-WEBSERVER-NUTZ.git src/main/java/com/ly/sys/", 'v1.0'],
-	["git submodule add --force https://git.oschina.net/dongfangx/COMMON-WEBSERVER-NUTZ-JAVA.git src/main/java/com/ly/comm/", 'v1.0'],
-	["git submodule add --force https://git.oschina.net/dongfangx/SYS-HTML-WEBSERVER-JAVA.git src/main/webapp/WEB-INF/sys/", 'v1.0'],
-	["git submodule add --force https://git.oschina.net/dongfangx/SYS-RESOURCES-WEBSERVER-NUTZ-JAVA.git src/main/webapp/sys/", 'v1.0'],
-	["git submodule add --force https://git.oschina.net/xknaan/B-JUI.git src/main/webapp/BJUI/", 'master']]
+	["git submodule add --force https://git.oschina.net/dongfangx/nutz-sys.git src/main/java/com/ly/sys/", 'v1.1'],
+	["git submodule add --force https://git.oschina.net/dongfangx/nutz-common.git src/main/java/com/ly/comm/", 'v1.1'],
+	["git submodule add --force https://git.oschina.net/dongfangx/beetl-bjui-sys.git src/main/webapp/WEB-INF/sys/", 'v1.1'],
+	["git submodule add --force https://git.oschina.net/dongfangx/sys-resources.git src/main/webapp/sys/", 'v1.3'],
+	["git submodule add --force https://git.oschina.net/dongfangx/BJUI.git src/main/webapp/BJUI/", "release_v1.2"]]
 
 	for cmd in commands:
 		p = subprocess.Popen(cmd[0], stdout=subprocess.PIPE, env=os.environ, shell=True)
