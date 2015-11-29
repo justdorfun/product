@@ -1,0 +1,72 @@
+
+<%
+var selected1 = "";
+%>
+<div class="bjui-pageContent tableContent">
+  <form method="post" action="${ctxPath}/jindu/save" class="pageForm" data-toggle="validate">
+
+    <input type="hidden" id="id" name="id" value="${jindu.id!}">
+    <input type="hidden" id="action" name="action" value="${action!}">
+	  <input type="hidden"  name="productid" value="${productid!}">
+
+
+
+	  <div class="pageFormContent" data-layout-h="0">
+
+    		<table class="table table-condensed table-hover" width="100%">
+				<tbody>
+
+
+				<tr>
+					<td>
+						<label for="j_name" class="control-label x85">名称</label>
+						<input type="text" name="name" id="j_name" value="${jindu.name!}" data-rule="" size="20">
+		            </td>
+		        </tr>
+
+				<tr>
+					<td>
+						<label for="j_startdate" class="control-label x85">开始时间</label>
+
+						<input type="text" name="startdate" id="j_startdate" value="${jindu.startdate!,'yyyy-MM-dd'}" data-toggle="datepicker" data-rule="date" size="20">
+		            </td>
+		        </tr>
+
+
+				<tr>
+					<td>
+						<label for="j_finishdate" class="control-label x85">完成时间</label>
+
+						<input type="text" name="finishdate" id="j_finishdate" value="${jindu.finishdate!,'yyyy-MM-dd'}" data-toggle="datepicker" data-rule="date" size="20">
+		            </td>
+		        </tr>
+
+
+				<tr>
+					<td>
+						<label for="j_username" class="control-label x85">完成人</label>
+						<input type="text" name="username" id="j_username" value="${jindu.username!}" data-rule="" size="20">
+		            </td>
+		        </tr>
+
+				<tr>
+					<td>
+						<label for="j_des" class="control-label x85">描述</label>
+						<input type="text" name="des" id="j_des" value="${jindu.des!}" data-rule="" size="20">
+		            </td>
+		        </tr>
+
+				</tbody>
+			</table>
+		</div>
+
+
+	</form>
+</div>
+
+<div class="bjui-pageFooter">
+	<ul>
+		<li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+		<li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+	</ul>
+</div>

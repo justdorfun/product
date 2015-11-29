@@ -2,7 +2,7 @@
 <%
 var selected1 = "";
 %>
-<div class="bjui-pageContent">
+<div class="bjui-pageContent tableContent">
   <form method="post" action="${ctxPath}/aporia/save" class="pageForm" data-toggle="validate">
 
     <input type="hidden" id="id" name="id" value="${aporia.id!}">
@@ -13,6 +13,27 @@ var selected1 = "";
 
     		<table class="table table-condensed table-hover" width="100%">
 				<tbody>
+
+				<tr>
+					<td>
+						<label for="j_osid" class="control-label x85">平台名</label>
+						<select id="j_osid" name="osid" data-toggle="selectpicker" data-width="200">
+							<%
+							selected1 = "";
+							for(obj in osList!)
+							{
+							if(isEmpty(aporia.osid) || obj.id != aporia.osid)
+							{
+							selected1="";
+							}else{
+							selected1 = "selected='selected'";
+							}
+							println("<option value='" + obj.id + "'"+selected1+">"+obj.name+"</option>");
+							}
+							%>
+						</select>
+					</td>
+				</tr>
 
 				<tr>
 					<td>
@@ -34,26 +55,7 @@ var selected1 = "";
 		                	</select>
 		            </td>
             	</tr>
-				<tr>
-					<td>
-						<label for="j_osid" class="control-label x85">平台名</label>
-		                	<select id="j_osid" name="osid" data-toggle="selectpicker" data-width="200"> 
-		                    <%
-                                selected1 = "";                                
-                                for(obj in osList!)
-                                {
-                                if(isEmpty(aporia.osid) || obj.id != aporia.osid)
-                                {
-                                selected1="";
-                                }else{
-                                selected1 = "selected='selected'";
-                                }
-                                println("<option value='" + obj.id + "'"+selected1+">"+obj.name+"</option>");
-                                }
-                              %>
-		                	</select>
-		            </td>
-            	</tr>
+
 
 				<tr>
 					<td>

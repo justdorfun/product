@@ -1,0 +1,90 @@
+
+<%
+var selected1 = "";
+%>
+<div class="bjui-pageContent tableContent">
+  <form method="post" action="${ctxPath}/publish/save" class="pageForm" data-toggle="validate">
+
+    <input type="hidden" id="id" name="id" value="${publish.id!}">
+    <input type="hidden" id="action" name="action" value="${action!}">
+	  <input type="hidden"  name="productid" value="${productid!}">
+
+
+
+	  <div class="pageFormContent" data-layout-h="0">
+
+    		<table class="table table-condensed table-hover" width="100%">
+				<tbody>
+
+				<tr>
+					<td>
+						<label for="j_name" class="control-label x85">版本号</label>
+						<input type="text" name="name" id="j_name" value="${publish.name!}" data-rule="" size="20">
+		            </td>
+		        </tr>
+
+				<tr>
+					<td>
+						<label for="j_startdate" class="control-label x85">发布时间</label>
+
+						<input type="text" name="startdate" id="j_startdate" value="${publish.startdate!,'yyyy-MM-dd'}" data-toggle="datepicker" data-rule="date" size="20">
+		            </td>
+		        </tr>
+
+
+				<tr>
+					<td>
+						<label for="j_style" class="control-label x85">部署方式</label>
+						<input type="text" name="style" id="j_style" value="${publish.style!}" data-rule="" size="20">
+		            </td>
+		        </tr>
+
+				<tr>
+					<td>
+						<label for="j_address" class="control-label x85">服务器地址</label>
+						<input type="text" name="address" id="j_address" value="${publish.address!}" data-rule="" size="20">
+		            </td>
+		        </tr>
+
+				<tr>
+					<td>
+						<label for="j_ip" class="control-label x85">服务器IP</label>
+						<input type="text" name="ip" id="j_ip" value="${publish.ip!}" data-rule="" size="20">
+		            </td>
+		        </tr>
+
+				<tr>
+					<td>
+						<label for="j_serveros" class="control-label x85">服务器系统</label>
+						<input type="text" name="serveros" id="j_serveros" value="${publish.serveros!}" data-rule="" size="20">
+		            </td>
+		        </tr>
+
+				<tr>
+					<td>
+						<label for="j_username" class="control-label x85">操作人</label>
+						<input type="text" name="username" id="j_username" value="${publish.username!}" data-rule="" size="20">
+		            </td>
+		        </tr>
+
+				<tr>
+					<td>
+						<label for="j_des" class="control-label x85">描述</label>
+						<input type="text" name="des" id="j_des" value="${publish.des!}" data-rule="" size="20">
+		            </td>
+		        </tr>
+
+				</tbody>
+			</table>
+		</div>
+
+
+	</form>
+</div>
+
+<div class="bjui-pageFooter">
+	<ul>
+		<li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+		<li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+	</ul>
+</div>

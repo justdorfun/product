@@ -2,9 +2,16 @@
 <%
 var selected1 = "";
 %>
-<div class="bjui-pageContent">
+<div class="bjui-pageContent tableContent">
 	<div style="height:99.9%; overflow:hidden;">
-		<div style="height:60%; overflow:hidden;">
+		<%
+		if(!isEmpty(product.id))
+		{
+		%>
+		<div style="height:30%; overflow:hidden;">
+		<%}else{%>
+		<div style="height:100%; overflow:hidden;">
+		<%}%>
 			<fieldset style="height:100%;">
 				<legend>基础信息</legend>
 				<div id="layout-01" style="height:94%; overflow:hidden;">
@@ -125,66 +132,6 @@ var selected1 = "";
 									</td>
 								</tr>
 
-
-
-								<tr>
-									<td>
-										<label for="j_ibad1" class="control-label x85">ibad1</label>
-										<input type="text" name="ibad1" id="j_ibad1" value="${product.ibad1!}" data-rule="" size="20">
-									</td>
-
-									<td>
-										<label for="j_ibad2" class="control-label x85">ibad2</label>
-										<input type="text" name="ibad2" id="j_ibad2" value="${product.ibad2!}" data-rule="" size="20">
-									</td>
-								</tr>
-
-								<tr>
-									<td>
-										<label for="j_ifad1" class="control-label x85">ifad1</label>
-										<input type="text" name="ifad1" id="j_ifad1" value="${product.ifad1!}" data-rule="" size="20">
-									</td>
-
-									<td>
-										<label for="j_ifad2" class="control-label x85">ifad2</label>
-										<input type="text" name="ifad2" id="j_ifad2" value="${product.ifad2!}" data-rule="" size="20">
-									</td>
-								</tr>
-
-								<tr>
-									<td>
-										<label for="j_abad1" class="control-label x85">abad1</label>
-										<input type="text" name="abad1" id="j_abad1" value="${product.abad1!}" data-rule="" size="20">
-									</td>
-
-									<td>
-										<label for="j_abad2" class="control-label x85">abad2</label>
-										<input type="text" name="abad2" id="j_abad2" value="${product.abad2!}" data-rule="" size="20">
-									</td>
-								</tr>
-
-								<tr>
-									<td>
-										<label for="j_afad1" class="control-label x85">afad1</label>
-										<input type="text" name="afad1" id="j_afad1" value="${product.afad1!}" data-rule="" size="20">
-									</td>
-
-									<td>
-										<label for="j_afad2" class="control-label x85">afad2</label>
-										<input type="text" name="afad2" id="j_afad2" value="${product.afad2!}" data-rule="" size="20">
-									</td>
-								</tr>
-
-								<tr>
-									<td>
-										<label for="j_umengkey" class="control-label x85">umengkey</label>
-										<input type="text" name="umengkey" id="j_umengkey" value="${product.umengkey!}" data-rule="" size="20">
-									</td>
-									<td>
-
-									</td>
-								</tr>
-
 								</tbody>
 							</table>
 						</div>
@@ -199,7 +146,7 @@ var selected1 = "";
 		if(!isEmpty(product.id))
 		{
 		%>
-		<div style="height:40%; overflow:hidden;">
+		<div style="height:70%; overflow:hidden;">
 
 			<fieldset style="height:100%;">
 				<legend>其他信息</legend>
@@ -207,21 +154,38 @@ var selected1 = "";
 				<ul class="nav nav-tabs" role="tablist">
 
 					<li class="active">
-						<a href="#aporia" role="tab" data-toggle="tab">技术难点</a>
+						<a href="#jindu"  role="tab" data-toggle="tab" data-reload="true">进度管理</a>
 					</li>
 
 					<li >
-						<a href="#technicalpoint" onclick="showTP()"  role="tab" data-toggle="tab">技术点</a>
+						<a href="#func" onclick="showFunc()"  role="tab" data-toggle="tab" >功能点</a>
+					</li>
+
+					<li >
+						<a href="#publish" onclick="showPublish()"  role="tab" data-toggle="tab">发布管理</a>
 					</li>
 
 				</ul>
 
 				<div class="tab-content" style="padding: 0px;">
-					<div class="tab-pane active in"  id="aporia" data-url="${ctxPath}/aporia?productid=${product.id!}" data-toggle="autoajaxload" >
+
+					<div class="tab-pane active in"  id="jindu"  >
+						<div data-url="${ctxPath}/jindu?productid=${product.id!}" data-toggle="autoajaxload">
+							</div>
 					</div>
 
-					<div class="tab-pane" id="technicalpoint" data-url="${ctxPath}/technicalpoint?productid=${product.id!}" data-toggle="autoajaxload">
+					<div class="tab-pane" id="func">
+						<div  data-url="${ctxPath}/func?productid=${product.id!}" data-toggle="autoajaxload">
+
+						</div>
 					</div>
+
+					<div class="tab-pane" id="publish" >
+						<div data-url="${ctxPath}/publish?productid=${product.id!}" data-toggle="autoajaxload">
+
+						</div>
+					</div>
+
 				</div>
 
 			</fieldset>
@@ -241,8 +205,14 @@ var selected1 = "";
 </div>
 
 <script type="text/javascript">
-	function showTP()
+	function showFunc()
 	{
-		$("#resetTP").click();
+		$("#resetFunc").click();
 	}
+
+	function showPublish()
+	{
+		$("#resetPublish").click();
+	}
+
 </script>

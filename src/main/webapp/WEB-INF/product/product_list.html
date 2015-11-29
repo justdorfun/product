@@ -10,6 +10,7 @@ var selected1 = "";
 		<input type="hidden" name="pageSize" value="${page.pageSize}" />
 		<input type="hidden" name="pageCurrent" value="${page.pageCurrent}" />
 
+
 		<div class="bjui-searchBar">
 
 				<label for="j_name">名称：</label>
@@ -84,7 +85,7 @@ var selected1 = "";
 			<div class="pull-right">
 
 				<a  href="${ctxPath}/product/edit" class="btn btn-default" data-id="dialog_product_edit" data-toggle="dialog"
-					data-width="800" data-height="600"  data-mask="true">添加</a>
+					data-width="800" data-height="400"  data-mask="true">添加</a>
 
 				<a  href="${ctxPath}/product/edit?id={#bjui-selected}" class="btn btn-default" data-id="tab_product_edit" data-toggle="dialog"
 					 data-mask="true" data-max="true">编辑</a>
@@ -102,7 +103,7 @@ var selected1 = "";
 
 	</form>
 </div>
-<div class="bjui-pageContent">
+<div class="bjui-pageContent tableContent">
 	<table  data-toggle="tablefixed" data-width="100%"  data-layout-h="0" data-nowrap="true">
 		<thead>
 		<tr>

@@ -57,4 +57,14 @@
     <!-- productgroup -->
     <cache name="productgroup" maxElementsInMemory="1000"/>
 
+    <!-- jindu -->
+    <cache name="jindu" maxElementsInMemory="1000"/>
+
+    <!-- publish -->
+    <cache name="publish" maxElementsInMemory="1000"/>
+
+    <!-- func -->
+    <cache name="func" maxElementsInMemory="1000"/>
+
+
 </ehcache>
