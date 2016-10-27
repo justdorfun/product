@@ -4,7 +4,7 @@ var selected1 = "";
 %>
 
 <div class="bjui-pageHeader">
-	<form id="pagerForm" data-toggle="ajaxsearch" action="${ctxPath}/func?productid=${productid!}" method="post">
+	<form id="pagerForm" data-toggle="ajaxsearch" action="/func?productid=${productid!}" method="post">
 
 
 		<input type="hidden" name="pageSize" value="${page.pageSize}" />
@@ -20,16 +20,16 @@ var selected1 = "";
 
 			<div class="pull-right">
 
-				<a  href="${ctxPath}/func/edit?productid=${productid!}" class="btn btn-default" data-id="dialog_func_edit" data-toggle="dialog"
+				<a  href="/func/edit?productid=${productid!}" class="btn btn-default" data-id="dialog_func_edit" data-toggle="dialog"
 					data-width="500" data-height="300"  data-mask="true" data-on-close="func_refresh">添加</a>
 
-				<a  href="${ctxPath}/func/edit?id={#bjui-selected}" class="btn btn-default" data-id="tab_func_edit" data-toggle="dialog"
+				<a  href="/func/edit?id={#bjui-selected}" class="btn btn-default" data-id="tab_func_edit" data-toggle="dialog"
 					data-width="500" data-height="300"  data-mask="true" data-on-close="func_refresh">编辑</a>
 
-				<a  href="${ctxPath}/func/edit?action=3&id={#bjui-selected}" class="btn btn-default" data-id="tab_func_edit" data-toggle="dialog"
+				<a  href="/func/edit?action=3&id={#bjui-selected}" class="btn btn-default" data-id="tab_func_edit" data-toggle="dialog"
 					data-width="500" data-height="300" data-mask="true" data-on-close="func_refresh">复制添加</a>
 
-				<a href="${ctxPath}/func/del?id={#bjui-selected}" class="btn btn-red" data-toggle="doajax"
+				<a href="/func/del?id={#bjui-selected}" class="btn btn-red" data-toggle="doajax"
 				   data-confirm-msg="确定要删除该行信息吗？" data-callback="func_refresh">删</a>
 
 

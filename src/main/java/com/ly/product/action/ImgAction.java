@@ -96,7 +96,7 @@ public class ImgAction {
     )throws IOException {
         Object rtnObject;
 
-        String webPath =  request.getServletContext().getRealPath("/");
+        String webPath =  request.getSession().getServletContext().getRealPath("/");
         String appPath = webPath.substring(0,webPath.length() - 1) + "upload/";
 
         if (f1 != null)
@@ -137,7 +137,7 @@ public class ImgAction {
         Img img = imgService.fetch(id);
         if (img.getImgurl() != null && img.getImgurl().trim().length() > 2)
         {
-            String webPath =  request.getServletContext().getRealPath("/");
+            String webPath =  request.getSession().getServletContext().getRealPath("/");
             String appPath = webPath.substring(0,webPath.length() - 1) + "upload/";
 
             Files.deleteFile(new File(appPath + img.getImgurl().trim()));

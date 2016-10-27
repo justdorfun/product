@@ -4,7 +4,7 @@ var selected1 = "";
 %>
 
 <div class="bjui-pageHeader">
-	<form id="pagerForm" data-toggle="ajaxsearch" action="${ctxPath}/aporia" method="post">
+	<form id="pagerForm" data-toggle="ajaxsearch" action="/aporia" method="post">
 
 
 		<input type="hidden" name="pageSize" value="${page.pageSize}" />
@@ -80,16 +80,16 @@ var selected1 = "";
 
 			<div class="pull-right">
 
-				<a  href="${ctxPath}/aporia/edit" class="btn btn-default" data-id="dialog_aporia_edit" data-toggle="dialog"
+				<a  href="/aporia/edit" class="btn btn-default" data-id="dialog_aporia_edit" data-toggle="dialog"
 					data-width="500" data-height="350"  data-mask="true" data-on-close="aporia_refresh">添加</a>
 
-				<a  href="${ctxPath}/aporia/edit?id={#bjui-selected}" class="btn btn-default" data-id="tab_aporia_edit" data-toggle="dialog"
+				<a  href="/aporia/edit?id={#bjui-selected}" class="btn btn-default" data-id="tab_aporia_edit" data-toggle="dialog"
 					data-width="500" data-height="350"  data-mask="true" data-on-close="aporia_refresh">编辑</a>
 
-				<a  href="${ctxPath}/aporia/edit?action=3&id={#bjui-selected}" class="btn btn-default" data-id="tab_aporia_edit" data-toggle="dialog"
+				<a  href="/aporia/edit?action=3&id={#bjui-selected}" class="btn btn-default" data-id="tab_aporia_edit" data-toggle="dialog"
 					data-width="500" data-height="350" data-mask="true" data-on-close="aporia_refresh">复制添加</a>
 
-				<a href="${ctxPath}/aporia/del?id={#bjui-selected}" class="btn btn-red" data-toggle="doajax"
+				<a href="/aporia/del?id={#bjui-selected}" class="btn btn-red" data-toggle="doajax"
 				   data-confirm-msg="确定要删除该行信息吗？" data-callback="aporia_refresh">删</a>
 
 				&nbsp;&nbsp;

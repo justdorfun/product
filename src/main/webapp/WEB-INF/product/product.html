@@ -16,7 +16,7 @@ var selected1 = "";
 				<legend>基础信息</legend>
 				<div id="layout-01" style="height:94%; overflow:hidden;">
 
-					<form method="post" action="${ctxPath}/product/save" class="pageForm" data-toggle="validate">
+					<form method="post" action="/product/save" class="pageForm" data-toggle="validate">
 
 						<input type="hidden" id="id" name="id" value="${product.id!}">
 						<input type="hidden" id="action" name="action" value="${action!}">
@@ -170,18 +170,18 @@ var selected1 = "";
 				<div class="tab-content" style="padding: 0px;">
 
 					<div class="tab-pane active in"  id="jindu"  >
-						<div data-url="${ctxPath}/jindu?productid=${product.id!}" data-toggle="autoajaxload">
+						<div data-url="/jindu?productid=${product.id!}" data-toggle="autoajaxload">
 							</div>
 					</div>
 
 					<div class="tab-pane" id="func">
-						<div  data-url="${ctxPath}/func?productid=${product.id!}" data-toggle="autoajaxload">
+						<div  data-url="/func?productid=${product.id!}" data-toggle="autoajaxload">
 
 						</div>
 					</div>
 
 					<div class="tab-pane" id="publish" >
-						<div data-url="${ctxPath}/publish?productid=${product.id!}" data-toggle="autoajaxload">
+						<div data-url="/publish?productid=${product.id!}" data-toggle="autoajaxload">
 
 						</div>
 					</div>

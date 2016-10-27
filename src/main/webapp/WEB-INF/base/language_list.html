@@ -4,7 +4,7 @@ var selected1 = "";
 %>
 
 <div class="bjui-pageHeader">
-	<form id="pagerForm" data-toggle="ajaxsearch" action="${ctxPath}/language" method="post">
+	<form id="pagerForm" data-toggle="ajaxsearch" action="/language" method="post">
 
 
 		<input type="hidden" name="pageSize" value="${page.pageSize}" />
@@ -23,16 +23,16 @@ var selected1 = "";
 
 			<div class="pull-right">
 
-				<a  href="${ctxPath}/language/edit" class="btn btn-default" data-id="dialog_language_edit" data-toggle="dialog"
+				<a  href="/language/edit" class="btn btn-default" data-id="dialog_language_edit" data-toggle="dialog"
 					data-width="500" data-height="300"  data-mask="true">添加</a>					
 
-				<a  href="${ctxPath}/language/edit?id={#bjui-selected}" class="btn btn-default" data-id="tab_language_edit" data-toggle="dialog"
+				<a  href="/language/edit?id={#bjui-selected}" class="btn btn-default" data-id="tab_language_edit" data-toggle="dialog"
 					data-width="500" data-height="300"  data-mask="true">编辑</a>
 
-				<a  href="${ctxPath}/language/edit?action=3&id={#bjui-selected}" class="btn btn-default" data-id="tab_language_edit" data-toggle="dialog"
+				<a  href="/language/edit?action=3&id={#bjui-selected}" class="btn btn-default" data-id="tab_language_edit" data-toggle="dialog"
 					data-width="500" data-height="300" data-mask="true">复制添加</a>
 
-				<a href="${ctxPath}/language/del?id={#bjui-selected}" class="btn btn-red" data-toggle="doajax" data-confirm-msg="确定要删除该行信息吗？">删</a>
+				<a href="/language/del?id={#bjui-selected}" class="btn btn-red" data-toggle="doajax" data-confirm-msg="确定要删除该行信息吗？">删</a>
 
 
 				&nbsp;&nbsp;
